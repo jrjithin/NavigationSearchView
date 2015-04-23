@@ -6,18 +6,21 @@ This Library helps you to add navigation features in the SearchView widget. Navi
 
 Set the class com.example.navigationsearchview.NavigationSearchView to your menuitem for SearchView.
 eg:
-        <item
+
+       ```xml
+       
+       <item
         android:id="@+id/action_search"
         android:actionLayout="@layout/abc_search_view"
         app:actionViewClass="com.example.navigationsearchview.NavigationSearchView"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/action_search"
         app:showAsAction="ifRoom|collapseActionView"/>
-
+        ```
 Add following code in your onCreateOptionsMenu
 
           NavigationSearchView action_search = new NavigationSearchView(mContext);
-					mainmenu.findItem(R.id.action_search).setActionView(action_search);
-					action_search.setOnQueryTextListener(inbox);
-					View v = mainmenu.findItem(R.id.action_search)
-							.getActionView();
+          mainmenu.findItem(R.id.action_search).setActionView(action_search);
+          action_search.setOnQueryTextListener(mQueryListener);
+          view v = mainmenu.findItem(R.id.action_search).getActionView();
+
